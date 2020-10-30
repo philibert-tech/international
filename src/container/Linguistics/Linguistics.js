@@ -1,25 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
 import English from '../English/English';
 import French from '../French/French';
 import German from '../German/German';
-import {Route, NavLink, Switch} from 'react-router-dom';
+import {Route, Link, Switch, Redirect} from 'react-router-dom';
 import'./Linguistics.css';
 
-class Linguistics extends Component{
+ function Linguistics(){
 
+    const Lang = localStorage.getItem("i18nextLng");
 
-    render(){
-
-
+    if(Lang === null){
+       localStorage.setItem("i18nextLng", "en");
+       Lang = localStorage.getItem("i18nextLng");
+    }
+          
+  
         return(
 
             <div>
             <header className="Linguistics">
                 <nav>
                     <ul>
-                            <li><NavLink to={{pathname:'/En'}}>English</NavLink></li>
-                            <li><NavLink to={{pathname:'/Fr'}}>French</NavLink></li>                            
-                            <li><NavLink to={{pathname:'/De'}}>German</NavLink></li>
+                            <li><Link to='/En'>English</Link></li>
+                            <li><Link to='/Fr'>French</Link></li>                            
+                            <li><Link to='/De'>German</Link></li>
                     </ul>
                 </nav>
 
@@ -27,13 +31,13 @@ class Linguistics extends Component{
             <Switch>
             <Route path="/En" exact component={English}/>            
             <Route path="/Fr" exact component={French}/>            
-            <Route path="/De" exact component={German}/>
-            
+            <Route path="/De" exact component={German}/>  
+            <Redirect from="/" to={Lang}/>          
             </Switch>
 
         </div>
         );
-    };
+
 }
 
 export default Linguistics;

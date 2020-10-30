@@ -1,27 +1,21 @@
-import React, { Component } from 'react';
-import Content from '../../component/Content/Content';
+import React, { useEffect} from 'react';
+import { useTranslation} from 'react-i18next';
 
-import {useTranslation} from 'react-i18next';
-
-function MyComponent() {
+function English() {
 const { t, i18n } = useTranslation();
-i18n.changeLanguage('en');
+useEffect(() => {
+    i18n.changeLanguage('en');
+},[i18n])
 
-      
-return <h1>{t("Welcome to React")}</h1>
+return (
+
+            <h1>{t("title")}</h1>
+
+
+);
+
 }
 
 
-class English extends Component{  
-
-
-render(){
-
-        return(
-           <MyComponent/>
-            
-        );
-    };
-}
 
 export default English;
