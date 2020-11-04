@@ -1,6 +1,6 @@
 import React, { useEffect} from 'react';
 import {useTranslation} from 'react-i18next';
-import logo from '../../assets/germany.png';
+import logo from '../../assets/images/germany.png';
 
 function German() {
 

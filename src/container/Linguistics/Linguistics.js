@@ -9,7 +9,7 @@ import './Linguistics.css';
  function Linguistics(){
 
     //get the last selected language from localstorage
-    let Lang = localStorage.getItem("i18nextLng");
+    let Lang = localStorage.getItem("i18nextLng")
 
     /*useEffect is used to to set the selected language 
     before the components are rendered and redirect the 
