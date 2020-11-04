@@ -1,42 +1,44 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {Route,  Redirect} from 'react-router-dom';
 import English from '../English/English';
 import French from '../French/French';
 import German from '../German/German';
-import {Route, Link, Switch, Redirect} from 'react-router-dom';
-import'./Linguistics.css';
+import Link from '../../component/Links/Links';
+import './Linguistics.css';
 
  function Linguistics(){
 
-    const Lang = localStorage.getItem("i18nextLng");
+    //get the last selected language from localstorage
+    let Lang = localStorage.getItem("i18nextLng");
 
-    if(Lang === null){
-       localStorage.setItem("i18nextLng", "en");
-       Lang = localStorage.getItem("i18nextLng");
-    }
-          
-  
-        return(
+    /*useEffect is used to to set the selected language 
+    before the components are rendered and redirect the 
+    user to the corresponding page*/
+    useEffect(() => {
+        if(Lang === null){
+            localStorage.setItem("i18nextLng", "en");
+            Lang = localStorage.getItem("i18nextLng");
+        }
 
-            <div>
+    },[Lang])
+            
+    return(
+        <div>
             <header className="Linguistics">
                 <nav>
                     <ul>
-                            <li><Link to='/En'>English</Link></li>
-                            <li><Link to='/Fr'>French</Link></li>                            
-                            <li><Link to='/De'>German</Link></li>
+                        <li><Link link='/En' >English</Link></li>
+                        <li><Link link='/Fr' >French</Link></li>                            
+                        <li><Link link='/De' >German</Link></li>
                     </ul>
                 </nav>
-
             </header>
-            <Switch>
             <Route path="/En" exact component={English}/>            
             <Route path="/Fr" exact component={French}/>            
             <Route path="/De" exact component={German}/>  
-            <Redirect from="/" to={Lang}/>          
-            </Switch>
-
+            <Redirect from="/" to={Lang}/>         
         </div>
-        );
+    );
 
 }
 

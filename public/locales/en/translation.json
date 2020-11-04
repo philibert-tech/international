@@ -1,8 +1,8 @@
 
-    {
-        "title": "Welcome to react using react-i18next",
-        "description": {
-          "part1": "To get started, edit <1>src/App.js</1> and save to reload.",
-          "part2": "Switch language between english and german using buttons above."
-        }
-      }
+{
+    "title": "Welcome to react using react-i18next",
+    "description": {
+      "part1": "React is an open-source, front end, JavaScript library for building user interfaces or UI components. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications.",
+      "part2": "Switch language between english and german using buttons above."
+    }
+}

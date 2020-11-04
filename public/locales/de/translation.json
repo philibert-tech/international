@@ -1,7 +1,7 @@
 {
-    "title": "Willkommen zu react und react-i18next",
-    "description": {
-      "part1": "Um loszulegen, ändere <1>src/App(DE).js</1> und speichere um neuzuladen.",
-      "part2": "Wechsle die Sprache zwischen deutsch und englisch mit Hilfe der beiden Schalter."
-    }
+  "title": "Willkommen zu react und react-i18next",
+  "description": {
+    "part1": "React ist eine Open-Source-Front-End-JavaScript-Bibliothek zum Erstellen von Benutzeroberflächen oder UI-Komponenten. Es wird von Facebook und einer Community einzelner Entwickler und Unternehmen gepflegt. React kann als Basis für die Entwicklung von einseitigen oder mobilen Anwendungen verwendet werden.",
+    "part2": "Wechsle die Sprache zwischen deutsch und englisch mit Hilfe der beiden Schalter."
   }
+}
